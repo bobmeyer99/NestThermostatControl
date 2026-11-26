@@ -35,8 +35,6 @@ State is refreshed every 5 minutes and right after each command. Google's reques
 
 This plugin's development referenced the following source(s), whose license is not on the standard permissive allowlist. Review their license terms before relying on or redistributing this plugin:
 
-- [GitHub - jfarmer08/wyze-api: An un-official API wrapper for Wyze products · GitHub](https://github.com/jfarmer08/wyze-api) -- license: unknown
-- [GitHub - shauntarves/wyze-sdk: A modern Python client for controlling Wyze devices. · GitHub](https://github.com/shauntarves/wyze-sdk) -- license: Unlicense
 - [GitHub - michaelkorby/nest_thermostat_logger: Log temperatures from all the nest sensors · GitHub](https://github.com/michaelkorby/nest_thermostat_logger) -- license: unknown
 - [GitHub - chriseng/nestgraph: Create pretty charts of your Nest thermostat data · GitHub](https://github.com/chriseng/nestgraph) -- license: unknown
 
