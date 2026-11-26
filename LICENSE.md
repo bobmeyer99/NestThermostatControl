@@ -12,6 +12,7 @@ This plugin's development referenced the following licensed source(s). Attributi
 - [GitHub - UniversalDevicesInc/eisy-ai: eisy AI Companion! · GitHub](https://github.com/UniversalDevicesInc/eisy-ai) -- License: MIT
 - [robomello/nest-sdm-control](https://github.com/robomello/nest-sdm-control) -- License: MIT
 - [Prohibit Nest thermostat temperature changes in Eco mode by kloppenburga · Pull Request #189946 · home-assistant/core · GitHub](https://github.com/home-assistant/core/pull/189946) -- License: Apache-2.0
+- [google-sdm-api/README.md at master · dkilgore90/google-sdm-api · GitHub](https://github.com/dkilgore90/google-sdm-api/blob/master/README.md) -- License: Apache-2.0
 
 ## MIT License (this plugin's own code)
 

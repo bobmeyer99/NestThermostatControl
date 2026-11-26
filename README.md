@@ -1,8 +1,9 @@
 # Nest Thermostat
 
-# Nest Thermostat
-
 Control a Google Nest thermostat from your eisy using **your own** Google Device Access project.
+
+## Tested
+Version 1.0.1 was tested by its owner on a real Nest Learning Thermostat (3rd generation) on a regular consumer Google account. Confirmed working: reading the thermostat, the heat target, the cool target, mode changes and Eco on/off. Other Nest models and Google Workspace accounts were not tested.
 
 ## What you get
 - Current temperature and humidity
@@ -19,14 +20,13 @@ Temperatures follow the scale set on the thermostat (°F or °C). Google only ac
 - To change the heat target the thermostat must be in Heat mode, the cool target needs Cool mode, and in Heat/Cool mode both targets are set together.
 - The thermostat's display scale cannot be changed through the API.
 - No Home/Away control was found in Google's thermostat documentation. Eco is offered instead.
-- Not tested against a real Nest Learning Thermostat when this version was generated.
 
 ## Requirements
-- A Device Access project already set up with Google (this plugin cannot create one), with an OAuth client linked to it and a consumer Google account that owns the thermostat.
+- A Device Access project already set up with Google (this plugin cannot create one), with an OAuth client linked to it and a consumer Google account that owns the thermostat. Google charges a one-time registration fee for Device Access.
 - The OAuth consent screen set to "In production" (in "Testing" status Google expires sign-ins after 7 days).
 
 ## Setup
-After install, open the plugin's configuration page and fill in `project_id`, `client_id` and `client_secret`, then follow the on-page notes to get a one-time `auth_code` and paste it in. The plugin stores its own long-lived sign-in privately in its `persist/` folder.
+After install, open the plugin's configuration page and fill in `project_id`, `client_id` and `client_secret`, then follow the on-page notes to get a one-time `auth_code` and paste it in. The plugin stores its own long-lived sign-in privately in its `persist/` folder on your eisy. Never share your client secret or that folder.
 
 ## Polling
 State is refreshed every 5 minutes and right after each command. Google's request limits were not confirmed, so the interval is deliberately conservative. Event push (Pub/Sub) is not used.
