@@ -1,0 +1,261 @@
+{
+  "editors": [
+    {
+      "id": "nest_temp",
+      "ranges": [
+        {
+          "uom": "17",
+          "min": -50,
+          "max": 150,
+          "prec": 1
+        },
+        {
+          "uom": "4",
+          "min": -50,
+          "max": 70,
+          "prec": 1
+        }
+      ]
+    },
+    {
+      "id": "nest_setpoint",
+      "ranges": [
+        {
+          "uom": "17",
+          "min": 50,
+          "max": 90,
+          "step": 1,
+          "prec": 1
+        },
+        {
+          "uom": "4",
+          "min": 10,
+          "max": 32,
+          "step": 0.5,
+          "prec": 1
+        }
+      ]
+    },
+    {
+      "id": "nest_humidity",
+      "ranges": [
+        {
+          "uom": "22",
+          "min": 0,
+          "max": 100,
+          "prec": 0
+        }
+      ]
+    },
+    {
+      "id": "nest_mode",
+      "ranges": [
+        {
+          "uom": "25",
+          "subset": "0,1,2,3",
+          "names": {
+            "0": "Off",
+            "1": "Heat",
+            "2": "Cool",
+            "3": "Heat/Cool"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nest_hvac",
+      "ranges": [
+        {
+          "uom": "25",
+          "subset": "0,1,2",
+          "names": {
+            "0": "Idle",
+            "1": "Heating",
+            "2": "Cooling"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nest_eco",
+      "ranges": [
+        {
+          "uom": "25",
+          "subset": "0,1",
+          "names": {
+            "0": "Off",
+            "1": "Eco"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nest_online",
+      "ranges": [
+        {
+          "uom": "25",
+          "subset": "0,1",
+          "names": {
+            "0": "Offline",
+            "1": "Online"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ED_CONTROLLER_ST",
+      "ranges": [
+        {
+          "subset": "0,1",
+          "uom": "25",
+          "names": {
+            "0": "Not Connected",
+            "1": "Connected"
+          }
+        }
+      ]
+    }
+  ],
+  "nodedefs": [
+    {
+      "id": "controller",
+      "name": "Nest Thermostat",
+      "properties": [
+        {
+          "id": "ST",
+          "name": "Status",
+          "editor": "ED_CONTROLLER_ST"
+        }
+      ],
+      "cmds": {
+        "sends": [],
+        "accepts": [
+          {
+            "id": "DISCOVER",
+            "name": "Discover",
+            "native": "false",
+            "parameters": []
+          }
+        ]
+      },
+      "links": {
+        "ctl": [],
+        "rsp": []
+      }
+    },
+    {
+      "id": "nest_thermostat",
+      "name": "Nest Thermostat",
+      "properties": [
+        {
+          "id": "ST",
+          "name": "Current Temperature",
+          "editor": "nest_temp"
+        },
+        {
+          "id": "CLIHUM",
+          "name": "Humidity",
+          "editor": "nest_humidity"
+        },
+        {
+          "id": "CLIMD",
+          "name": "Mode",
+          "editor": "nest_mode"
+        },
+        {
+          "id": "CLISPH",
+          "name": "Heat Setpoint",
+          "editor": "nest_setpoint"
+        },
+        {
+          "id": "CLISPC",
+          "name": "Cool Setpoint",
+          "editor": "nest_setpoint"
+        },
+        {
+          "id": "CLIHCS",
+          "name": "Heating/Cooling State",
+          "editor": "nest_hvac"
+        },
+        {
+          "id": "CLIEMD",
+          "name": "Eco Mode",
+          "editor": "nest_eco"
+        },
+        {
+          "id": "CONNECTED",
+          "name": "Connection",
+          "editor": "nest_online"
+        }
+      ],
+      "cmds": {
+        "sends": [],
+        "accepts": [
+          {
+            "id": "CLIMD",
+            "name": "Set Mode",
+            "native": "false",
+            "parameters": [
+              {
+                "id": "",
+                "editor": "nest_mode",
+                "optional": false,
+                "init": "CLIMD"
+              }
+            ]
+          },
+          {
+            "id": "CLISPH",
+            "name": "Set Heat Setpoint",
+            "native": "false",
+            "parameters": [
+              {
+                "id": "",
+                "editor": "nest_setpoint",
+                "optional": false,
+                "init": "CLISPH"
+              }
+            ]
+          },
+          {
+            "id": "CLISPC",
+            "name": "Set Cool Setpoint",
+            "native": "false",
+            "parameters": [
+              {
+                "id": "",
+                "editor": "nest_setpoint",
+                "optional": false,
+                "init": "CLISPC"
+              }
+            ]
+          },
+          {
+            "id": "CLIEMD",
+            "name": "Set Eco Mode",
+            "native": "false",
+            "parameters": [
+              {
+                "id": "",
+                "editor": "nest_eco",
+                "optional": false,
+                "init": "CLIEMD"
+              }
+            ]
+          },
+          {
+            "id": "QUERY",
+            "name": "Query",
+            "native": "false",
+            "parameters": []
+          }
+        ]
+      },
+      "links": {
+        "ctl": [],
+        "rsp": []
+      }
+    }
+  ],
+  "linkdefs": []
+}
